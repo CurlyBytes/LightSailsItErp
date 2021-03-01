@@ -1,0 +1,6 @@
+﻿namespace SharedKernel
+{
+    class IHaveDomainEvent
+    {
+    }
+}
