@@ -13,18 +13,18 @@ namespace Domain.Warehouse.ValueObjects
   public class WarehouseCodeName : ValueObject
     {
         public string CodeName { get; private set; }
-        private readonly IHaveCodeNameRegexChecker _iHaveCodeNameRegexChecker;
 
-
-        public WarehouseCodeName(string codeName)
+        public WarehouseCodeName( string codeName)
         {
+           
             string regexPattern = @"\b\w*[-']\w*\b";
+            //Guard.Against.Null(iHaveCodeNameRegexChecker, nameof(iHaveCodeNameRegexChecker));
             Guard.Against.NullOrEmpty(codeName, nameof(codeName));
             Guard.Against.NullOrWhiteSpace(codeName, nameof(codeName));
             Guard.Against.InvalidFormat(codeName, nameof(codeName), regexPattern);
-            Guard.Against.InvalidInput(codeName, nameof(codeName), CodeNameIsUnique);
+           
 
-
+           // _iHaveCodeNameRegexChecker = iHaveCodeNameRegexChecker;
             CodeName = codeName;
 
         }
@@ -42,9 +42,6 @@ namespace Domain.Warehouse.ValueObjects
 
         }
 
-        private bool CodeNameIsUnique(string codeName)
-        {
-            return _iHaveCodeNameRegexChecker.IsUnique(codeName);
-        }
+ 
     }
 }
