@@ -1,6 +1,10 @@
-﻿namespace SharedKernel
+﻿using SharedKernel.Events;
+using System.Collections.Generic;
+
+namespace SharedKernel
 {
-    class IHaveDomainEvent
+    public interface IHaveDomainEvent
     {
+        public List<DomainEvent> DomainEvents { get; set; }
     }
 }
