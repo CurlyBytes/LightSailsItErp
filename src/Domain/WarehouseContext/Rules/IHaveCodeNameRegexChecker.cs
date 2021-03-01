@@ -1,4 +1,4 @@
-﻿namespace Domain.Warehouse.Rules
+﻿namespace Domain.WarehouseContext.Rules
 {
     public interface IHaveCodeNameRegexChecker
     {

@@ -1,5 +1,5 @@
 ﻿using Ardalis.GuardClauses;
-using Domain.Warehouse.Rules;
+using Domain.WarehouseContext.Rules;
 using SharedKernel.Models;
 using SharedKernel.Rules;
 using System;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Warehouse.ValueObjects
+namespace Domain.WarehouseContext.ValueObjects
 {
   public class WarehouseCodeName : ValueObject
     {
@@ -17,11 +17,11 @@ namespace Domain.Warehouse.ValueObjects
         public WarehouseCodeName( string codeName)
         {
            
-            string regexPattern = @"\b\w*[-']\w*\b";
+            
             //Guard.Against.Null(iHaveCodeNameRegexChecker, nameof(iHaveCodeNameRegexChecker));
             Guard.Against.NullOrEmpty(codeName, nameof(codeName));
             Guard.Against.NullOrWhiteSpace(codeName, nameof(codeName));
-            Guard.Against.InvalidFormat(codeName, nameof(codeName), regexPattern);
+            Guard.Against.InvalidFormat(codeName, nameof(codeName), Constants.Regexpattern.WarehouseCodeName);
            
 
            // _iHaveCodeNameRegexChecker = iHaveCodeNameRegexChecker;
