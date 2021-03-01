@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{24EEEEDA-0C1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{81C69981-D24F-4DB5-956A-8ED148494010}"
 	ProjectSection(SolutionItems) = preProject
+		Guidelines.md = Guidelines.md
 		docs\README.md = docs\README.md
 	EndProjectSection
 EndProject
